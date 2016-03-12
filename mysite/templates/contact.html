@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<html>
+	<head>
+
+
+    </head>
+	<body>
+
+
+					<form method="POST" action="#"> {% csrf_token %}
+						<div align="center"><h2>Contact Us</h2>
+						<p>Have any questions?<br><strong>Simply Call</strong></p></div><hr>
+                        {{form.as_p}}
+                        <p align="center"><input type ="submit" value="Send Message"></p>
+                    </form>
+
+
+	</body>
+</html>
