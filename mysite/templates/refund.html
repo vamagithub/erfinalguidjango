@@ -1,0 +1,40 @@
+    {% load staticfiles %}
+<html>
+    {% include 'head.html' %}
+
+<!-- Pre Loader -->
+
+
+<!--Navigation-->
+    {% include 'nav.html' %}
+
+
+
+<!-- Dashboard -->
+
+    <div class="container">
+      <h2>Refund Policy</h2><div class="row">
+          <div class="col s12 m15">
+            <div class="card-panel blue">
+               <font size="3.5"><p class="white-text">The money paid to us will be fully refunded to you -<br>
+              <br>If we are unable to submit the Income Tax Returns by the end of next two working days, provided all the queries asked from you is fully furnished to us after payment.
+              <br><br> Any Delay in providing us these details, the delay will not be counted to determine the time schedule for completion of the service.
+              </p></font>
+            </div>
+          </div>
+        </div>
+    </div>
+
+<!--Parallax-->
+     <div class="parallax-container">
+        <div class="parallax">
+            <img src="{% static 'img/parallax1.jpg' %} ">
+        </div>
+     </div>
+
+
+<!--Footer-->
+{% include 'footer.html' %}
+
+
+</html>

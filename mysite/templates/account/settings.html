@@ -1,0 +1,24 @@
+{% extends "account/base.html" %}
+
+{% load i18n %}
+{% load bootstrap %}
+
+{% block body_class %}account account-settings{% endblock %}
+
+{% block head_title %}{% trans "Account" %}{% endblock %}
+
+{% block body %}
+    <div class="row">
+
+            <form class="col s12" method="POST" action="{% url 'account_settings' %}">
+                <h2>{% trans "Account" %}</h2>
+                {% csrf_token %}
+                {{ form|bootstrap }}
+
+                <button type="submit" class="btn waves-effect waves-light blue darken-1"> {% trans "Save" %}
+                   <i class="mdi-content-send right white-text"></i>
+                </button>
+            </form>
+        </div>
+
+{% endblock %}

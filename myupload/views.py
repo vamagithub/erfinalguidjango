@@ -8,7 +8,7 @@ from mysite import settings
 
 
 def Form(request):
-    return render(request,"form.html",{})
+    return render(request,"dash.html",{})
 
 
 def Upload(request):

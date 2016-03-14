@@ -1,0 +1,43 @@
+{% extends "site_base.html" %}
+
+{% load account_tags %}
+{% load i18n %}
+{% load bootstrap %}
+
+{% block body %}
+
+        <div class="row">
+            <form method="POST" action="{% url 'account_login' %}" autocapitalize="off" {% if form.is_multipart %} enctype="multipart/form-data"{% endif %}>
+                <h2>Login</h2>
+                        {% csrf_token %}
+                        {{ form.as_p }}
+
+                        {% if redirect_field_value %}
+                            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+                        {% endif %}
+                        <div>
+
+                              <button float="left" class="btn waves-effect waves-light blue darken-1" type="submit">Login
+                                    <i class="mdi-content-send right white-text"></i>
+                              </button>&emsp;&emsp;
+
+                              <span style="white-space: nowrap;">{% trans "Don't have an account?" %}&emsp;
+                                  <a href="{% urlnext 'account_signup' %}">{% trans "Sign up" %}</a></span>
+
+                        </div>
+
+
+            </form>
+
+            {% if ACCOUNT_OPEN_SIGNUP %}
+
+                    <a href="{% url 'account_password_reset' %}">{% trans "Forgot your password?" %}</a><br>
+
+            {% endif %}
+
+        </div>
+
+
+{% endblock %}
+
+

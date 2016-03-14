@@ -44,4 +44,4 @@ def contact(request):
         "title_align_center":title_align_center,
     }
 
-    return render(request, "contact.html", context)
+    return render(request, "index.html", context)

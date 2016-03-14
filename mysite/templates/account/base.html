@@ -1,0 +1,27 @@
+{% extends "theme_bootstrap/subnav_base.html" %}
+
+{% load i18n %}
+
+{% block body_class %}account{% endblock %}
+
+{% block subnav %}
+
+    <h2 class="header text_b" align="center">{% trans "Settings" %}</h2>
+    <div align="center" class="list-group">
+
+
+        <a  href="{% url 'account_settings' %}">
+            {% trans "Account" %}
+        </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+        <a  href="{% url 'account_password' %}">
+            {% trans "Change password" %}
+        </a>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+
+        <a  href="{% url 'account_delete' %}">
+            {% trans "Delete account" %}
+        </a>
+
+    </div>
+
+{% endblock %}
